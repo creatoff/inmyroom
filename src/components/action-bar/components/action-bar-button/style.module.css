@@ -1,0 +1,16 @@
+.button {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.text {
+    display: inline-block;
+    min-width: 15px;
+}

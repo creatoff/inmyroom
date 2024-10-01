@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "javascript.validate.enable": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.configPath": ".prettierrc",
+  "cSpell.enabled": false
+}
