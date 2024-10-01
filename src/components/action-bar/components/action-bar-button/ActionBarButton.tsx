@@ -5,7 +5,6 @@ import styles from './style.module.css'
 interface IProps extends React.HTMLAttributes<HTMLButtonElement> {
   icon?: React.ComponentType
   text?: string
-  children?: React.ReactNode
 }
 
 export default function ActionBarButton({
@@ -17,7 +16,7 @@ export default function ActionBarButton({
   return (
     <button className={styles.button} {...props}>
       {Icon ? <Icon /> : null}
-      <span className={styles.text}>{text ?? children}</span>
+      {text ? <span className={styles.text}>{text}</span> : null}
     </button>
   )
 }
