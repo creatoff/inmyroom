@@ -8,18 +8,12 @@ import { useComments, useFavorites, useScroll, useShare } from 'hooks'
 import { ActionBarButton as Button } from './components'
 import styles from './style.module.css'
 
-const SCROLL_THRESHOLD = 200
-const APPEARANCE_DELAY = 1000
-
 export function ActionBar() {
   const { handleShare } = useShare()
   const { commentsCount, addComment } = useComments()
   const { favoritesCount, addToFavorites } = useFavorites()
 
-  const { isVisible, handleScrollUp } = useScroll({
-    threshold: SCROLL_THRESHOLD,
-    delay: APPEARANCE_DELAY,
-  })
+  const { isVisible, scrollToTop } = useScroll()
 
   const classNames = cn({
     [styles.bar]: true,
@@ -30,7 +24,7 @@ export function ActionBar() {
     <div className={classNames}>
       <div className={styles.wrapper}>
         <Button icon={IconShare} onClick={handleShare} />
-        <Button icon={IconPageUp} onClick={handleScrollUp} />
+        <Button icon={IconPageUp} onClick={scrollToTop} />
         <Button
           icon={IconComments}
           text={String(commentsCount)}
